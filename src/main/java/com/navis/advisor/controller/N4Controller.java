@@ -16,6 +16,7 @@ import java.util.List;
 public class N4Controller {
     Prediction latestPrediction;
 
+    // wired from the bean in AdvisorApplication
     @Autowired
     List<N4HealthLog> logEntries;
 
@@ -28,7 +29,7 @@ public class N4Controller {
      */
     @GetMapping("/")
     public String root() {
-        return "Hello.  This service is alive.";
+        return "Hello.  This service is alive!";
     }
 
     /**
