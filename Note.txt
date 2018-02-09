@@ -1,8 +1,0 @@
-cd advisor
-
-heroku create
-# rename the app on Heroku website
-git init
-git remote add origin https://github.com/windeyu/advisor.git
-git push -u origin master
-heroku ps:scale web=1
