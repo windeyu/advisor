@@ -2,6 +2,7 @@ package com.navis.advisor.controller;
 
 import com.navis.advisor.bean.N4HealthLog;
 import com.navis.advisor.bean.Prediction;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,9 @@ import java.util.List;
 @RestController
 public class N4Controller {
     Prediction latestPrediction;
+
+    @Autowired
+    List<N4HealthLog> logEntries;
 
     /**
      * Root, to test if the service is alive
@@ -29,12 +33,14 @@ public class N4Controller {
 
     /**
      * Invoked by the N4 center node to push the log entry once every 30 seconds
+     *
      * @param inHealthLog
      * @return
      */
     @RequestMapping(value = "/n4log", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> pushLogEntry(@RequestBody N4HealthLog inHealthLog) {
-        // TODO save N4HealthLog in a memory list
+
+        logEntries.add(inHealthLog);
 
         // Invoke Scikit-learn http entry point.  Getting a prediction may take many seconds.  Let's get the
         // prediction right now before Alexa/android request for it.
@@ -56,12 +62,7 @@ public class N4Controller {
     @GetMapping("/getLogEntries")
     public List<N4HealthLog> getLogEntries() {
         // TODO can do data pre-processing here before returning to Android
-        List<N4HealthLog> logs = Arrays.asList(
-                new N4HealthLog(),
-                new N4HealthLog(),
-                new N4HealthLog()
-        );
-        return logs;
+        return logEntries;
     }
 
     /**
