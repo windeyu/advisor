@@ -5,7 +5,7 @@ package com.navis.advisor.bean;
  */
 public class TopicLog {
     private String hostName;
-    private String queueSize;
+    private Long queueSize;
 
     public String getHostName() {
         return hostName;
@@ -15,11 +15,11 @@ public class TopicLog {
         this.hostName = hostName;
     }
 
-    public String getQueueSize() {
+    public Long getQueueSize() {
         return queueSize;
     }
 
-    public void setQueueSize(String queueSize) {
+    public void setQueueSize(Long queueSize) {
         this.queueSize = queueSize;
     }
 }

@@ -41,15 +41,16 @@ public class N4Controller {
     @RequestMapping(value = "/n4log", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> pushLogEntry(@RequestBody N4HealthLog inHealthLog) {
 
+        System.out.println("Received from N4 Center Node: " + inHealthLog);
         logEntries.add(inHealthLog);
 
         // Invoke Scikit-learn http entry point.  Getting a prediction may take many seconds.  Let's get the
         // prediction right now before Alexa/android request for it.
         String predictionUrl = "http://heroku.com/navis-machine-learning?" + "cpu=10&" + "memory=256";
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<Prediction> response = restTemplate.getForEntity(predictionUrl, Prediction.class);
-        latestPrediction = response.getBody();
-        System.out.println(response.getStatusCode());
+        //ResponseEntity<Prediction> response = restTemplate.getForEntity(predictionUrl, Prediction.class);
+        //latestPrediction = response.getBody();
+        //System.out.println(response.getStatusCode());
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 

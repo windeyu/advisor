@@ -30,51 +30,51 @@ import java.util.List;
  *
  */
 public class N4HealthLog {
-    private String cpu;
-    private String totalMemory;
-    private String freeMemory;
-    private String amqMemoryPercentUsage;
-    private String amqStorePercentUsage;
+    private Long cpu;
+    private Long totalMemory;
+    private Long freeMemory;
+    private Long amqMemoryPercentUsage;
+    private Long amqStorePercentUsage;
     private List<QueueLog> queueLogs; // List of queue info
     private List<TopicLog> topicLogs; // List of topic consumers
 
-    public String getCpu() {
+    public Long getCpu() {
         return cpu;
     }
 
-    public void setCpu(String cpu) {
+    public void setCpu(Long cpu) {
         this.cpu = cpu;
     }
 
-    public String getTotalMemory() {
+    public Long getTotalMemory() {
         return totalMemory;
     }
 
-    public void setTotalMemory(String totalMemory) {
+    public void setTotalMemory(Long totalMemory) {
         this.totalMemory = totalMemory;
     }
 
-    public String getFreeMemory() {
+    public Long getFreeMemory() {
         return freeMemory;
     }
 
-    public void setFreeMemory(String freeMemory) {
+    public void setFreeMemory(Long freeMemory) {
         this.freeMemory = freeMemory;
     }
 
-    public String getAmqMemoryPercentUsage() {
+    public Long getAmqMemoryPercentUsage() {
         return amqMemoryPercentUsage;
     }
 
-    public void setAmqMemoryPercentUsage(String amqMemoryPercentUsage) {
+    public void setAmqMemoryPercentUsage(Long amqMemoryPercentUsage) {
         this.amqMemoryPercentUsage = amqMemoryPercentUsage;
     }
 
-    public String getAmqStorePercentUsage() {
+    public Long getAmqStorePercentUsage() {
         return amqStorePercentUsage;
     }
 
-    public void setAmqStorePercentUsage(String amqStorePercentUsage) {
+    public void setAmqStorePercentUsage(Long amqStorePercentUsage) {
         this.amqStorePercentUsage = amqStorePercentUsage;
     }
 

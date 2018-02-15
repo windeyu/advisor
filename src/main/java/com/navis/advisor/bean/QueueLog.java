@@ -5,10 +5,10 @@ package com.navis.advisor.bean;
  */
 public class QueueLog {
     private String queueName;
-    private String queueSize;
-    private String inFlight;
-    private String enqRate;
-    private String deqRate;
+    private Long queueSize;
+    private Long inFlight;
+    private Long enqRate;
+    private Long deqRate;
 
     public String getQueueName() {
         return queueName;
@@ -18,35 +18,35 @@ public class QueueLog {
         this.queueName = queueName;
     }
 
-    public String getQueueSize() {
+    public Long getQueueSize() {
         return queueSize;
     }
 
-    public void setQueueSize(String queueSize) {
+    public void setQueueSize(Long queueSize) {
         this.queueSize = queueSize;
     }
 
-    public String getInFlight() {
+    public Long getInFlight() {
         return inFlight;
     }
 
-    public void setInFlight(String inFlight) {
+    public void setInFlight(Long inFlight) {
         this.inFlight = inFlight;
     }
 
-    public String getEnqRate() {
+    public Long getEnqRate() {
         return enqRate;
     }
 
-    public void setEnqRate(String enqRate) {
+    public void setEnqRate(Long enqRate) {
         this.enqRate = enqRate;
     }
 
-    public String getDeqRate() {
+    public Long getDeqRate() {
         return deqRate;
     }
 
-    public void setDeqRate(String deqRate) {
+    public void setDeqRate(Long deqRate) {
         this.deqRate = deqRate;
     }
 
