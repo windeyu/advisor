@@ -33,6 +33,7 @@ public class AdvisorApplication {
 				setInFlight(1L);
 				setEnqRate(10L);
 				setDeqRate(10L);
+				setConsumerCount(2L);
 			}
 		});
 		List<TopicLog> topicLogs = new ArrayList<>();

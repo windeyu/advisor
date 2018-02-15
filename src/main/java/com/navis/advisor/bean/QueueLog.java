@@ -9,6 +9,7 @@ public class QueueLog {
     private Long inFlight;
     private Long enqRate;
     private Long deqRate;
+    private Long consumerCount;
 
     public String getQueueName() {
         return queueName;
@@ -50,9 +51,17 @@ public class QueueLog {
         this.deqRate = deqRate;
     }
 
+    public Long getConsumerCount() {
+        return consumerCount;
+    }
+
+    public void setConsumerCount(Long consumerCount) {
+        this.consumerCount = consumerCount;
+    }
+
     @Override
     public String toString() {
         return "{ queueName:" + queueName + " queueSize:" + queueSize + " inFlight:" + inFlight +
-                " enqRate:" + enqRate + " deqRate:" + deqRate + " }";
+                " enqRate:" + enqRate + " deqRate:" + deqRate + " consumerCount:" + consumerCount + " }";
     }
 }
